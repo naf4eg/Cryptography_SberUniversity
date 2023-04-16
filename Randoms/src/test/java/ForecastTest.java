@@ -13,4 +13,10 @@ public class ForecastTest {
         var forecast = new Forecast("Ivan", "Secure");
         forecast.print();
     }
+
+    @Test
+    public void testDefault() {
+        var forecast = new Forecast("Bob", "BlaBla");
+        forecast.print();
+    }
 }
