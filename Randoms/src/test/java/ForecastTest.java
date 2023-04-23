@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import ru.bachev.random.Forecast;
+import ru.bachev.hw1.Forecast;
 
 public class ForecastTest {
     @Test

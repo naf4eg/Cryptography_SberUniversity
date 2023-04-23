@@ -1,4 +1,4 @@
-package ru.bachev.random;
+package ru.bachev.hw1;
 
 import java.security.SecureRandom;
 import java.util.Map;
