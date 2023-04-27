@@ -1,4 +1,4 @@
-package ru.bachev.random;
+package ru.bachev.hw1;
 
 @FunctionalInterface
 public interface AlgorithmRandom {
