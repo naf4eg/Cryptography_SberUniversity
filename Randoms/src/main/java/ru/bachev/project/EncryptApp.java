@@ -24,7 +24,7 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.Random;
 
-public class FirstApp {
+public class EncryptApp {
     private static final String PATH = "/tmp/keystore/keystore.jks";
     private static final String ALGORITHM = "RSA";
     private static final String TRANSFORM = "RSA/ECB/PKCS1Padding";
@@ -32,9 +32,9 @@ public class FirstApp {
     private static final String KEY_NAME= "key";
 
     public static void main(String[] args) throws KeyStoreException, IOException, CertificateException, NoSuchAlgorithmException, OperatorCreationException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, SignatureException {
-        System.out.println(args.length);
         if (args.length < 3) {
             System.out.println("укажите 3 параметра: тип keystore, password, cipher word");
+            return;
         }
 
         var basicOrSecure = args[0];
@@ -71,11 +71,9 @@ public class FirstApp {
         var keystoreTypeListSize = keystoreTypeList.size();
 
         if ("Basic".equals(basicOrSecure)) {
-            System.out.println("==>> Basic");
             var random = new Random();
             return keystoreTypeList.get(random.nextInt(keystoreTypeListSize));
         } else if ("Secure".equals(basicOrSecure)) {
-            System.out.println("==>> Secure");
             var secureRandom = new SecureRandom();
             return keystoreTypeList.get(secureRandom.nextInt(keystoreTypeListSize));
         } else {
