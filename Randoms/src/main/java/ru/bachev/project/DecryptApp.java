@@ -5,13 +5,12 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.*;
 import java.security.cert.CertificateException;
 import java.util.Base64;
 
-public class DecriptApp {
+public class DecryptApp {
     private static final String TRANSFORM = "RSA/ECB/PKCS1Padding";
     private static final String ALGORITHM_SIGN = "SHA256withRSA";
 
@@ -42,7 +41,7 @@ public class DecriptApp {
     }
 
     private static byte[] cipherWord(PrivateKey privateKey, byte[] word) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
-        Cipher cipher = Cipher.getInstance(DecriptApp.TRANSFORM);
+        Cipher cipher = Cipher.getInstance(DecryptApp.TRANSFORM);
         cipher.init(Cipher.DECRYPT_MODE, privateKey);
         return cipher.doFinal(word);
     }
